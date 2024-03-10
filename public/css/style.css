@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    background-color: rgb(255, 255,255);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-size: 1.6rem;
+    padding: 10px;
+}
+#nav-link{
+    margin-top: 10px;
+}
+#nav-link a{
+    
+    color: #536162;
+    font-size: 1.3rem;
+    margin:auto;
+}
+#nav-link a:hover{
+    color:black;
+    border-bottom: 1px solid black;
+}
+.piksel14{
+    font-size: 1.4rem;
+}
+.containerX{
+    width: 80%;
+    margin: auto;
+}
+.marginTop1{
+    margin-top: 8px;
+    
+}
+.marginTop2{
+    margin-top: 10px;
+}
+.marginTop3{
+    margin-top: 12px;
+}
+.marginTop4{
+    margin-top: 14px;
+}
+.marginBot1{
+    margin-bottom: 8px;
+}
+.marginBot2{
+    margin-bottom: 10px;
+}
+.marginBot3{
+    margin-bottom: 12px;
+}
+.marginBot4{
+    margin-bottom: 3rem;
+}
+.textCenter{
+    text-align: center;
+}
+.padding1{
+    padding: 6px;
+}
+.padding2{
+    padding: 8px;
+}
+.padding3{
+    padding: 10px;
+}
+.padding4{
+    padding: 12px;
+}
+.marginX1{
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+.marginX2{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.flex-container{
+    display: flex;
+   
+}
+.gap1{
+    gap:1rem;
+}
+.gap3{
+    gap: 8rem;
+}
+
+.flex-container >div{
+    
+    width: 100%;
+    display: inline-block;
+    height: 710x;
+}
+.paddingX1{
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.paddingX2{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.paddingY1{
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+.paddingY2{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.flexLeft{
+    font-size: 38rem;
+    text-align: center;
+    padding-top: auto;
+}
+.slogan{
+    font-size: 8rem;
+    font-weight: bold;
+}
+.button-silindir{
+    border-radius: 12px;
+    padding: .8rem;
+    font-size: 2rem;
+    background-color: white;
+    border: 1px solid #536162 ;
+    text-align: center;
+    display: block;
+    width: 250px;
+    margin: auto;
+    margin-bottom: 1.3rem;
+}
+.button-silindir:hover{
+    background-color: #536162;
+}
+.flex-container hr{
+    width: 47%;
+    color: black;
+}
+.bck-blue{
+    background-color: #0079FF;
+}
+h2 span{
+    color:#0079FF;
+
+}
+h2 span:hover{
+    cursor: pointer;
+}
+.text-blue{
+    color: #0079FF;
+}

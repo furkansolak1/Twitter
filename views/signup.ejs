@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div class="covered" >
+        <div style="padding: 48px;" class="containerX" >
+            <div class="flex-container gap4">
+                <div class="signHidden" >
+                    <form action="" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="flex-container padding2">
+                            <div class="widthFull">
+                                <a href="/" class="exit"><i class="fa-solid fa-xmark"></i></a>
+                                
+                            </div>
+                            <div class="widthFull">
+                                <i class="fa-brands fa-x-twitter font24"></i>
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="containerX padding3">
+                            <h2 class="font24 bold">Hesabını oluştur</h2>
+                            <div class="widthFull">
+                                
+                                <% if (typeof ad != "undefined") { %>
+                                    <input type="text" class="name input" name="name" id="name" placeholder="İsim" required value="<%= ad %>"> 
+                                    <% } else { %>
+                                        <input type="text" class="name input" name="name" id="name" placeholder="İsim" required > 
+                                <% } %>
+                              
+                                <input type="email" class="phone input" name="email" id="email" placeholder="Email" required>
+                                <% if (message) { %>
+                                    <p class="bold"> <%= message %></p>                                 
+                                <% } %>
+                                                               
+                                
+                                <h2 class="bold " style="margin-top: 3.4rem;">Doğum tarihi</h2>
+                                <p class="marginTop4">Bu, herkese açık olarak gösterilmeyecek. Bu hesap bir işletme, evcil hayvan veya başka bir şey için olsa bile kendi yaşını doğrulaman gerekir.</p>
+                        </div>
+                            <div>
+                                
+                                <div style="justify-content: space-between;" class="containerX flex-container paddingX2 paddingY2">
+                                    <select class="custom-select paddingX2 paddingY2 margin1" name="ay" id="ay" placeholder="ay"> 
+                                        
+                                        <option value="-1">Ay</option>
+                                        <% for( let i = 0; i < aylar.length; i++ ) { %>
+                                            <option value="<%= i+1 %>"><%= aylar[i] %></option>
+                                        <% } %>
+                                        
+                                    
+                                    </select>
+                                    <select class="custom-select paddingX2 paddingY2 margin1" name="gun" id="gun">
+                                        <option value="-1">Gün</option>
+                                        <% for( let i = 0; i < gunler.length; i++ ) { %>
+                                            <option value="<%= i+1 %>"><%= gunler[i] %></option>
+                                        <% } %>
+                                    </select>
+                                    <select class="custom-select paddingX2 paddingY2 margin1" name="yil" id="yil">
+                                        <option value="-1">Yıl</option>
+                                        <% for( let i = 0; i < yillar.length; i++ ) { %>
+                                            <option value="<%= 2024-i %>"><%= yillar[i] %></option>
+                                        <% } %>
+                                    </select>
+                                
+                                </div>
+                                <div class="textCenter" style="display: block;">
+                                    <button class="buttonYeni " style="margin-top: 30px;" type="submit">İleri</button>
+                                </div>
+                            </div>
+                        
+                    </form>
+                       
+                    </div>
+                
+                
+              
+            </div>
+            <div  class="flexLeft" style="width: 90%;">
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+            <div  class="flexRight" >
+                <h1 class="slogan marginBot5" >Şu anda olup bitenler</h1>
+                <div class="alt" style="width: 60%;">
+                    <h2 style="font-size: 3rem;  font-weight: bold;" class="marginBot4">Hemen katıl.</h2>
+                    <a href="" class="button-silindir widthFull hidden poiter renk">Google ile oturum aç  <i style="font-size: 1.8rem;" class="fa-brands fa-google"></i></a>
+                    <a href="" class="button-silindir widthFull hidden poiter renk"><i class="fa-brands fa-apple"></i> Apple ile kaydol</a>
+                    <div class="flex-container gap1 marginTop3 marginBot3">
+                        <hr>
+                        <span>veya</span>
+                        <hr>
+                    </div>
+                    <a href="" class="button-silindir  bck-blue widthFull hidden poiter renk">Hesap oluştur</a>
+                    <h2 style="font-size: 1rem; " class="marginBot5 paddingY2">By signing up, you agree to the <span>Terms of Service</span> and <span class="poiter">Privacy Policy</span>, including <span>Cookie Use</span>.</h2>
+                    <h2  class="bold marginBot4">Zaten bir hesabın var mı?</h2>
+                    <a href="" class="button-silindir renk text-blue widthFull hidden poiter" style="margin-bottom: 1rem;">Giriş Yap</a>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="flex-container gap1 paddingX2 paddingY1 marginX2" id="nav-link">
+            <a href="">Hakkında</a>
+            <a href="">X uygulamasını indir</a>
+            <a href="">Yardım Merkezi</a>
+            <a href="">Hizmet Şartları</a>
+            <a href="">Gizlilik Politikası</a>
+            <a href="">Çerez Politikası</a>
+            <a href="">Imprint</a>
+            <a href="">Erişilebilirlik</a>
+            <a href="">Reklam Bilgisi</a>
+            <a href="">Blog</a>
+            <a href="">Durum</a>
+            <a href="">Kariyer</a>
+            <a href="">Marka Kaynakları</a>
+            <a href="">Pazarlama</a>
+            <a href="">İşletmeler için X</a>
+            <a href="">Geliştiriciler</a>
+            <a href="">Dizin</a>
+            <a href="">Ayarlar</a>
+        </div>
+       
+    </div>
+    
+</body>
+
+</html>

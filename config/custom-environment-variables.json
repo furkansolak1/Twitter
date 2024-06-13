@@ -1,0 +1,11 @@
+{
+    "db":{
+        "password":"DB_PASSWORD"
+    },
+    "auth":{
+        "jwtPrivateKey":"JWTPRIVATEKEY"
+    },
+    "mail":{
+        "pass":"MAIL_PASS"
+    }
+}

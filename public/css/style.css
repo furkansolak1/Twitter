@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "TwitterChirpExtendedHeavy","Verdana",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 html{
     font-family: 'Open Sans', sans-serif;
@@ -49,6 +50,13 @@ body{
 .marginTop4{
     margin-top: 14px;
 }
+
+.marginTop6{
+    margin-top: 4rem;
+}
+.marginTop5{
+    margin-top: 150px;
+}
 .marginBot1{
     margin-bottom: 8px;
 }
@@ -60,6 +68,12 @@ body{
 }
 .marginBot4{
     margin-bottom: 3rem;
+}
+.marginBot5{
+    margin-bottom: 4rem;
+}
+.margin1{
+    margin: 10px;
 }
 .textCenter{
     text-align: center;
@@ -94,10 +108,15 @@ body{
 .gap3{
     gap: 8rem;
 }
+.gap4{
+    gap: 15rem;
+}
+.bold{
+    font-weight: bold;
+}
 
 .flex-container >div{
     
-    width: 100%;
     display: inline-block;
     height: 710x;
 }
@@ -118,20 +137,25 @@ body{
     padding-top: 1rem;
 }
 .flexLeft{
+    width: 100%;
     font-size: 38rem;
     text-align: center;
     padding-top: auto;
+    margin-right:3rem ;
+}.flexRight{
+    width: 100%;
+
 }
 .slogan{
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: bold;
 }
 .button-silindir{
     border-radius: 12px;
     padding: .8rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     background-color: white;
-    border: 1px solid #536162 ;
+    border: 1px solid #5c6768 ;
     text-align: center;
     display: block;
     width: 250px;
@@ -141,12 +165,27 @@ body{
 .button-silindir:hover{
     background-color: #536162;
 }
+.buttonYeni{
+    border-radius: 12px;
+    padding: .8rem;
+    font-size: 1.6rem;
+    background-color: #536162;
+    border: 1px solid #5c6768 ;
+    text-align: center;
+    display: block;
+    width: 250px;
+    margin: auto;
+    margin-bottom: 1.3rem;
+}
+.buttonYeni:hover{
+    background-color: #0B60B0;
+}
 .flex-container hr{
     width: 47%;
     color: black;
 }
 .bck-blue{
-    background-color: #0079FF;
+    background-color: #4CB9E7;
 }
 h2 span{
     color:#0079FF;
@@ -157,4 +196,61 @@ h2 span:hover{
 }
 .text-blue{
     color: #0079FF;
+}
+.widthFull{
+    width: 100%;
+}
+.signHidden{
+    width: 600px;
+    height: 650px;
+    z-index: 3;
+    border-radius: 10px;
+  background-color:white;
+
+    
+
+  position:absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  margin-left: -300px;
+
+  margin-top: -325px;
+}
+.font24{
+    font-size: 2.4rem;
+}
+.exit{
+    font-size: 2rem;
+    border: none;
+    background-color: white;
+}
+.input{
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.covered{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128,0.8);
+    z-index: 2;
+}
+.renk{
+    background-color: rgba(128, 128, 128,0.8);
+}
+.hidden{
+    visibility: unset;
+}
+.poiter {
+    pointer-events: none;
+}
+.custom-select{
+    border-radius: 4px;
+
 }

@@ -1,16 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head') %>
+    <%- include('../partials/head') %>
 </head>
 <body style="margin: 0; padding: 0;">
-    <div class="covered" >
+    <div class="covered" style="background-color: white;">
         <div style="padding: 48px;" class="containerX" >
-            <div class="flex-container gap4">
-                
-                
-                
-              
+            <div class="row  custom-select">
+                <div class="col-md-3 padding2  border-radius10" >
+                    <div class="blocky  padding4">
+                        <a href="/twitter"><i  class="fa-brands fa-x-twitter fa-4x "></i></a>
+                         
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-solid fa-house fa-2x"></i>
+                        <button id="button1" class="buttonsade"> <span class="padding3"> Anasayfa</span></button>
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-solid fa-magnifying-glass fa-2x "></i>
+                        <span class="padding3"> Keşfet</span>
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-regular fa-bell fa-2x"></i>
+                        <span class="padding3"> Bildirimler</span>
+                    </div>
+                    <div class="blocky padding4">
+                        
+                        <i class="fa-regular fa-bookmark fa-2x "></i>
+                        <span class="padding3"> Yer işaretleri</span>
+                    </div>
+                    <div class="blocky padding4">
+                        
+                        <i class="fa-solid fa-envelope fa-2x"></i>
+                        <span class="padding3">Mesajlar</span>
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-solid fa-users fa-2x "></i>
+                        <span class="padding3">Topluluklar</span>
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-brands fa-x-twitter fa-2x "></i>
+                        <span class="padding3"> Premium</span>
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-regular fa-user fa-2x "></i>
+                        <button id="button2" class="buttonsade"> <span class="padding3"> Profil</span></button>
+                        
+                        
+                    </div>
+                    <div class="blocky padding4">
+                        <i class="fa-solid fa-gear fa-2x "></i>
+                        <span class="padding3"> Ayarlar Ve Gizlilik</span>
+                    </div>
+                    <div class="blocky padding4 border-radius10">
+                        <div class="flexy">
+                            <div style="width: 50%;">
+                                <span class="bold"> <%= user.name %> </span><br>
+                                <%= user.userName %>
+                            </div>
+                              
+                            <a href="/logout" class="padding2 "> <i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 border-radius10" style=" height: 100px;">
+                    <div class="showline gosterme" id="home1">
+
+                        <form action="/create/tweet?_csrf=<%= csrfToken %>" enctype="multipart/form-data" method="post">
+                            <div class="card text-center">
+                                <div class="row">
+                                    <div class="col-md-1 padding2">
+                                        <img src="/static/images/<%= user.image %>" class="img-fluid" style="border-radius: 60%;" alt="">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <textarea name="content" class="form-control font16" rows="5" placeholder="Neler oluyor?"  required></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="flexy padding2">
+                                    <input type="file" class="form-control" style="border:none" id="resim" name="resim">
+                                    <button class="button-silindir2  bck-blue " type="submit">Gönder</button>
+                                </div>
+    
+                            </div>
+                        </form>
+                        <%- include('../partials/tweets3',followingTweets) %>
+                    </div>
+                    <div class="showline gosterme" id="profile1">
+                        <div class="bg">
+                            <div class="profileImage">
+                                <img src="/static/images/<%= user.image %>" class="img-fluid" style="border-radius: 60%; width: 150px; height: 150px;" alt="">
+                            </div>
+                            <div class="profileImage2">
+                                <button class="buttonsade bold">Profili düzenle </button>
+                            </div>
+                        </div>
+                        <div class="mtt">
+                            <div style="width: 50%;">
+                                <span class="bold font24"> <%= user.name %> </span><br>
+                                @<%= user.userName %>
+                            </div>
+                            <div style="width: 50%;">
+                                <span class="bold font24"> <%= user.bio %> </span><br>
+                            </div>
+                            <div style="width: 50%;">
+                                <i class="fa-solid fa-cake-candles"></i><span class=""> <%= dateStr %> </span><br>
+                            </div>
+                            <div class="row marginTop2">
+                                <% if (typeof user.folowing == "undefined") { %>
+                                    <div class="col-md-3 marginTop1">
+                                       0 Takip edilen
+                                   </div>
+                                   <% } else { %>
+                                    <div class="col-md-3 marginTop1">
+                                        <%= user.folowing.length %> Takip Edilen
+                                    </div>
+                                <% } %>
+                                
+                                <% if (typeof user.folowers == "undefined") { %>
+                                    <div class="col-md-3 marginTop1">
+                                       0 Takipçi
+                                   </div> 
+                                   <% } else { %>
+                                    <div class="col-md-3 marginTop1">
+                                        <%= user.folowers.length %> Takipçi
+                                    </div>
+                                <% } %>
+                            </div>
+                            <div class="flexy marginTop2">
+
+                                <button class="buttonsade1">Gönderiler</button>
+                                <button class="buttonsade1">Yanıtlar</button>
+                                <button class="buttonsade1">Öne Çıkanlar</button>
+                                <button class="buttonsade1">Makaleler</button>
+                                <button class="buttonsade1">Medya</button>
+                                <button class="buttonsade1">Beğeni</button>
+                                
+                            </div>
+                            <%- include('../partials/tweets',userTweets) %>
+                        </div>
+                    </div>
+                    <% if ( arananuser!= null) { %>
+                     
+                        <div class="showline">
+                            <div class="bg">
+                                <div class="profileImage">
+                                    <img src="/static/images/<%= arananuser.image %>" class="img-fluid" style="border-radius: 60%; width: 150px; height: 150px;" alt="">
+                                </div>
+                                <form action="/takipet/arananid=<%= arananuser._id %>" method="post">
+                                    <div class="profileImage2 marginTop2">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <input type="hidden" name="arananid" value="<%= arananuser._id %>">
+                                        <button type="submit" class="button-silindir3 bold">Takip Et</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mtt">
+                                <div style="width: 50%;">
+                                    <span class="bold font24"> <%= arananuser.name %> </span><br>
+                                    @<%= arananuser.userName %>
+                                </div>
+                                <div style="width: 50%;">
+                                    <span class="bold font24"> <%= arananuser.bio %> </span><br>
+                                </div>
+                               
+                                <div class="row marginTop2">
+                                    <% if (typeof arananuser.folowing == "undefined") { %>
+                                        <div class="col-md-3 marginTop1">
+                                           0 Takip edilen
+                                       </div>
+                                       <% } else { %>
+                                        <div class="col-md-3 marginTop1">
+                                            <%= arananuser.folowing.length %> Takip edilen
+                                        </div> 
+                                    <% } %>
+                                    
+                                    <% if (typeof arananuser.folowers == "undefined") { %>
+                                        <div class="col-md-3 marginTop1">
+                                           0 Takipçi
+                                       </div>
+                                       <% } else { %>
+                                        <div class="col-md-3 marginTop1 ">
+                                            <%= arananuser.folowers.length %> Takipçi
+                                        </div>  
+                                    <% } %>
+                                </div>
+                                <div class="flexy marginTop2">
+    
+                                    <button class="buttonsade1">Gönderiler</button>
+                                    <button class="buttonsade1">Yanıtlar</button>
+                                    <button class="buttonsade1">Öne Çıkanlar</button>
+                                    <button class="buttonsade1">Makaleler</button>
+                                    <button class="buttonsade1">Medya</button>
+                                    <button class="buttonsade1">Beğeni</button>
+                                    
+                                </div>
+                                
+                                    <%- include('../partials/tweets2',arananTweets) %>
+                                
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-3 border-radius10 padding4" >
+                        <form action="/twitter">
+                            <div class="flexy">
+    
+                                <input class="inputy " name="aranan" type="text"  placeholder="ara" >
+                                <button type="submit" style="display: none;"></button>
+                            </div>
+                            <div class=" marginTop4 text-center card deneme">
+                                <h2 class="marginTop4">İlgini çekebilecek gündemler</h3>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Gündemdekiler</span>
+                                    <h3 >Çanakkale</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Spor</span>
+                                    <h3 >Galatasaray</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Eğitim</span>
+                                    <h3 >ÖSYM</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Gündemdekiler</span>
+                                    <h3 >Yangın</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">İş Dünyası ve Finans</span>
+                                    <h3 >Türkiye</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Spor</span>
+                                    <h3 >Futbol</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Gündemdekiler</span>
+                                    <h3 >Siyaset</h3>
+                                </div>
+                                <div class="marginTop6">
+                                    <span class="text-gray ">Gündemdekiler</span>
+                                    <h3 >Göçmen Krizi</h3>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             
       
@@ -19,6 +255,7 @@
     
        
     </div>
+    <script src="/static/js/click.js"></script>
 </body>
 
 </html>

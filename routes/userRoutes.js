@@ -1,5 +1,12 @@
 const express =require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
-router.get("/twitter",userController.index);
+const isAuth= require("../middlewares/isAuth");
+const imageUpload = require("../helpers/image-upload");
+const csrf = require("../middlewares/csrf");
+router.get("/twitter",csrf,isAuth,userController.index);
+router.post("/create/tweet",csrf,isAuth,imageUpload.upload.single("resim"),userController.post_createTweet);
+router.post("/takipet/:arananid",csrf,isAuth,userController.takipet);
+router.post("/begen",csrf,isAuth,userController.begen);
+router.post("/rt",csrf,isAuth,userController.rt);
 module.exports=router;

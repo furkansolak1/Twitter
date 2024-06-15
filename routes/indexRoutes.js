@@ -12,6 +12,7 @@ router.post("/signup",csrf,indexController.post_signup);
 router.get("/signup",csrf,indexController.get_signup);
 router.get("/",csrf,indexController.get_index);
 router.get("/login",csrf,indexController.get_login);
+router.get("/logout",csrf,indexController.get_logout);
 router.post("/login",csrf,indexController.post_login);
 
 module.exports=router;

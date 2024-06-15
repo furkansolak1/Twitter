@@ -1,0 +1,75 @@
+<% userTweets.forEach(tweet => { %>
+                             
+    <div class="card marginTop3 padding3">
+        <div class="row">
+            <div class="col-md-1">
+                <img src="/static/images/<%= tweet.owner.image %>" class="img-fluid" style="border-radius: 60%;" alt="">
+            </div>
+            <div class="col-md-4">
+                <span class="bold "> <%= tweet.owner.name %> </span><br>
+                @<%= tweet.owner.userName %>
+            </div>
+            <div class="col-md-12 padding2">
+                <p><%= tweet.content %></p>
+            </div>
+            <div class="col-md-12 text-center padding2">
+                <img src="/static/images/<%= tweet.photo %>"  class="imager" alt="">
+
+            </div>
+        </div>
+        <div class="flexy padding3">
+            <div class="m-auto">
+                <button class="buttonsade"><i class="fa-regular fa-comment font16"></i></button>
+                
+                <% if (typeof tweet.comments == "undefined") { %>   
+                    <span>0</span>
+                <% } else { %>
+                   <span><%= tweet.comments.length %></span>
+                <% } %>         
+                
+            </div>
+            
+            <div class="m-auto flexy align-center">
+                <form action="/rt" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="hidden" name="tweetid" value="<%= tweet._id %>">
+                    <button class="buttonsade"><i class="fa-solid fa-retweet"></i></i></button>
+                </form>
+                
+                <% if (typeof tweet.rt == "undefined") { %>   
+                    <span>0</span>
+                <% } else { %>
+                   <span><%= tweet.rt.length %></span>
+                <% } %>         
+                
+            </div>
+            <div class="m-auto flexy align-center">
+                <form action="/begen" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="hidden" name="tweetid" value="<%= tweet._id %>">
+                    <button class="buttonsade"><i class="fa-regular fa-heart"></i></button>
+                </form>
+                <% if (typeof tweet.likes == "undefined") { %>   
+                    <span>0</span>
+                <% } else { %>
+                   <span><%= tweet.likes.length %></span>
+                <% } %>         
+                
+            </div>
+            <div class="m-auto">
+                <button class="buttonsade my-2"><i class="fa-regular fa-bookmark"></i></button>
+                <button class="buttonsade my-2"><i class="fa-solid fa-share-nodes"></i></button>
+                
+                
+                
+            </div>
+            <div class="m-auto">
+                
+                   
+                
+            </div>
+        </div>
+
+    </div>
+      
+<% }) %>

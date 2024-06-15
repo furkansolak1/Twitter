@@ -56,10 +56,12 @@ exports.post_signupVerification=async function(req,res,next){
         if(error){
             console.log("validate error ",error);
         }
+        var dummy = name.replace(" ","")+crypto.randomBytes(3).toString('hex');
         user = new User({
             name:name,
             email:email,
-            birthday:date
+            birthday:date,
+            userName:dummy
         })
         await user.save();
         req.session.isAuth =1;
@@ -141,6 +143,15 @@ exports.get_index= async function(req,res,next){
         res.render("index",{
             title:"X. Olan biten burada"
         });
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+exports.get_logout= async function(req,res,next){
+    try{
+        await req.session.destroy();
+        res.redirect("/");
     }
     catch(err){
         console.log(err);

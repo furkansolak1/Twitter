@@ -13,6 +13,18 @@ a{
     text-decoration: none;
     color: black;
 }
+.fs-16{
+    font-size: 1.6rem;
+}
+.fs-24{
+    font-size: 1.6rem;
+}
+.fs-32{
+    font-size: 1.6rem;
+}
+.fs-48{
+    font-size: 1.6rem;
+}
 body{
     font-size: 1.6rem;
     padding: 10px;
@@ -33,9 +45,18 @@ body{
 .piksel14{
     font-size: 1.4rem;
 }
+.deneme{
+    border-top: none;
+    border-bottom: none;
+}
 .containerX{
     width: 80%;
     margin: auto;
+}
+.imager{
+    max-width: 100%;
+    height: auto;
+    border-radius: 6%;
 }
 .marginTop1{
     margin-top: 8px;
@@ -114,11 +135,37 @@ body{
 .bold{
     font-weight: bold;
 }
-
+.flexy{
+    display: flex;
+}
+.blocky{
+    display: block;
+}
+.flexy-basis-1{
+    flex-grow: 25%;
+}
+.flexy-basis-2{
+    flex-grow: 50%;
+}
+.flexy-grow-1{
+    flex-grow: 1;
+}
+.flexy-grow-2{
+    flex-grow: 2;
+}
+.flexy-grow-3{
+    flex-grow: 3;
+}
+.flexy-grow-4{
+    flex-grow: 4;
+}
 .flex-container >div{
     
     display: inline-block;
     height: 710x;
+}
+.align-center{
+    align-items: center;
 }
 .paddingX1{
     padding-left: .5rem;
@@ -150,6 +197,70 @@ body{
     font-size: 6rem;
     font-weight: bold;
 }
+.text-white{
+    color: white;
+}
+.text-black{
+    color: black;
+}
+.text-gray{
+    color: gray;
+}
+.border-radius10{
+    border-radius: 10px;
+}
+.buttonsade{
+    padding: .8rem;
+    font-size: 1.6rem;
+    background-color: white;
+    text-align: center;
+    border: none;
+}
+.buttonsade1{
+    margin: auto;
+    padding: .8rem;
+    font-size: 1.6rem;
+    background-color: white;
+    
+    border: none;
+}
+.buttonsade1:hover{
+    background-color: #EEEEEE;
+}
+.buttonsade1:active{
+    border-bottom: #0B60B0;
+}
+.bg{
+    background-color: gray;
+    height: 200px;
+    position: relative;
+    width: 100%;
+}
+.bggray{
+    background-color: gray;
+
+}
+.profileImage{
+    position: absolute;
+    
+    top: 120px;
+    left: 0;
+    width: 150px;
+    height: 150px;    
+  
+}
+.mtt{
+    margin-top: 100px;
+}
+.profileImage2{
+    position: absolute;
+    
+    top: 200px;
+    right: 0;
+    width: 150px;
+    height: 150px;    
+  
+}
 .button-silindir{
     border-radius: 12px;
     padding: .8rem;
@@ -161,6 +272,27 @@ body{
     width: 250px;
     margin: auto;
     margin-bottom: 1.3rem;
+}
+.button-silindir2{
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    background-color: white;
+    border: 1px solid #5c6768 ;
+    
+}
+.button-silindir3{
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    background-color: black;
+    color: white;
+    
+    
+}
+
+.gosterme{
+    display: none;
 }
 .button-silindir:hover{
     background-color: #536162;
@@ -219,6 +351,9 @@ h2 span:hover{
 
   margin-top: -325px;
 }
+.font16{
+    font-size: 1.6rem;
+}
 .font24{
     font-size: 2.4rem;
 }
@@ -231,6 +366,12 @@ h2 span:hover{
     padding: 1rem;
     margin-top: 2rem;
     width: 100%;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.inputy{
+    padding: 1rem;
+    width: 90%;
     border: 1px solid black;
     border-radius: 6px;
 }
